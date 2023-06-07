@@ -1,0 +1,87 @@
+<h1>view quizzes</h1>
+<mat-card class="mt-3"  *ngFor="let item of quizzes">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>
+            {{item.title}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{item.category.title}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        {{item.description}}
+    </mat-card-content>
+    <div>
+        <button [routerLink]="['/admin-dashbord/viewquestion/'+item.quiz_id+'/'+item.title]" mat-raised-button color="primary"  class="mx-2" >Question</button>
+        <button mat-raised-button color="light" class="mx-2">Max Marks: {{item.maxMarks}}</button>
+        <button mat-raised-button color="light"  class="mx-2">Number of Question: {{item.numberOfQuestions}}</button>
+        <button [routerLink]="['/admin-dashbord/updatequiz/'+item.quiz_id]" mat-raised-button color="primary"  class="mx-2" >Update</button>
+        <button mat-raised-button color="primary"  class="mx-2">Attempts</button>
+        <button mat-raised-button color="warn" (click)="deletQuiz(item.quiz_id)" class="mx-2">Delete</button>  
+    </div>
+ 
+</mat-card>
+
+
+<div class="text-center my-3">
+    <button mat-raised-button color="primary" [routerLink]="['/admin-dashbord/addquiz']">Add Quiz</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- *ngFor="let item of quizzes"
+<h1>View Quiz </h1>
+<mat-card class="mt-2" >
+    <mat-list>
+       
+        <div class="row">
+            <div class="col-7">
+                <mat-list-item>
+                    <mat-icon matListItemIcon>quizzes</mat-icon>
+                    <div matListItemTitle >Table</div>
+                    <div matListItemLine>angular material uninstall command</div>
+                </mat-list-item>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-9">
+                        <button mat-raised-button color="primary"  class="mx-2" [routerLink]="['/admin-dashbord/viewquestion']">Question</button>
+                        <button mat-raised-button color="light" class="mx-2">Max Marks:100</button>
+                        <button mat-raised-button color="light"  class="mx-2">Number of Question:10</button>
+                        <button mat-raised-button color="primary"  class="mx-2" [routerLink]="['/admin-dashbord/updatequiz']">Update</button>
+                        <button mat-raised-button color="primary"  class="mx-2">Attempts</button>
+                        <button mat-raised-button color="warn"  class="mx-2">Delete</button>
+                    </div>
+                
+            </div>
+        </div>
+       
+    </mat-list>
+</mat-card>
+
+<div class="text-center my-3">
+    <button mat-raised-button color="primary" [routerLink]="['/admin-dashbord/addquiz']">Add Quiz</button>
+</div> -->

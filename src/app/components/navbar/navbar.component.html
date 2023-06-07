@@ -1,0 +1,59 @@
+
+
+<mat-toolbar color="primary">
+     <button mat-icon-button class="example-icon" [routerLink]="['/']" aria-lable="Example icon-button with menu icon">
+          <mat-icon>menu_book</mat-icon>
+     </button>
+     <a class="logo" [routerLink]="['/']">Exam</a>
+     <span class="example-spacer"></span>
+
+
+     <button *ngIf="!islogdIn" mat-icon-button class="example-icon favorite-icon mb10 " aria-label="Example icon-button with heart icon"
+          [routerLink]="['/login']">Login</button>
+
+
+     <button *ngIf="!islogdIn" mat-icon-button class="example-icon favorite-icon mr20 ml20 mb10 "
+          aria-label="Example icon-button with heart icon" [routerLink]="['/signup']">SignUp</button>
+
+
+     <button *ngIf="islogdIn && user" mat-icon-button class="example-icon favorite-icon mb10 mx-4" aria-label="Example icon-button with heart icon"
+           >{{user.firstname}}</button><!-- {{user.username | uppercase }} -->
+
+     <button *ngIf="islogdIn" mat-icon-button class="example-icon favorite-icon mr20 ml20 mb10 "
+          aria-label="Example icon-button with heart icon" (click)="logOut()">SignOut</button>    
+
+</mat-toolbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mat-toolbar color="primary">
+     <a [routerLink]="" mat-icon-button class="example-icon ">
+         <mat-icon>menu_book</mat-icon>
+     </a>
+     <span>Exam</span>
+     <samp class="example-spacer"></samp>
+     <a [routerLink]="'login'" class="nav-link" mat-icon-button>
+         <mat-icon>login</mat-icon>
+         Login</a>
+ 
+     <a [routerLink]="'signup'" mat-icon-button class="mx-3 nav-link ">
+         <mat-icon>login</mat-icon>
+         SignUp</a>    
+    
+ </mat-toolbar> -->
+
+
+

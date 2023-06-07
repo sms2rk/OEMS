@@ -1,0 +1,53 @@
+<mat-card>
+    <mat-list>
+        <h1>All Category Here</h1>
+        <div class="row">
+            <div class="col-7"  >
+                <mat-list-item *ngFor="let category of allcategory">
+                    <mat-icon matListItemIcon>category</mat-icon>
+                    <div matListItemTitle>{{category.title }}</div>
+                    <div matListItemLine>{{category.description}}</div>
+                    <button mat-raised-button color="primary" [routerLink]="['/admin-dashbord/updatecategory/'+category.category_id]" class="">Update Category</button>
+                    <button mat-raised-button color="primary" class="mx-2" (click)=" deleteCategory(category.category_id)">Delete Category</button>
+                </mat-list-item>
+                </div> 
+                
+                <!-- <div class="col-5">
+                    <button mat-raised-button color="primary" [routerLink]="'/admin-dashbord/updatecategory'" class="">Update Category</button>
+                    <button mat-raised-button color="primary" class="mx-2">DeleteCategory</button>
+                </div> -->
+        </div>
+       
+        <div class="text-center my-3">
+            <button mat-raised-button color="primary" [routerLink]="'/admin-dashbord/addcategory'">Add Category</button>
+        </div>
+    </mat-list>
+</mat-card>
+
+
+
+
+
+
+
+
+
+<!-- <mat-card>
+    <mat-list>
+        <h1>All Category Here</h1>
+        <mat-list-item>
+            <mat-icon matListItemIcon>category</mat-icon>
+            <div mat-line>HTML</div>
+            <div mat-line>Lorem ipsum dolor sit amet.</div>
+            <button mat-raised-button color="primary" class="mx-2 justify-content-end">Update Category</button>
+            <button mat-raised-button color="primary">DeleteCategory</button>
+
+            <mat-divider></mat-divider>
+        </mat-list-item>
+
+        <div class="text-center my-3">
+            <button mat-raised-button color="primary">Add Category</button>
+        </div>
+    </mat-list>
+</mat-card> -->
+

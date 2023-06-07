@@ -1,0 +1,114 @@
+<h1>Question Of {{quiz_title}}</h1>
+       
+
+<mat-card *ngFor="let item of questions; let i =index "class="mt-20">
+    <mat-list class="p-3">
+        <p> <b>Q{{i+1}})</b>  <span >{{item.content}}</span></p>
+
+        <div class="row">
+            <div class="col-6">
+                <p> <b>A)</b> <samp>{{item.option1}}</samp></p>
+            </div>
+           
+            <div class="col-6">
+                <p> <b>B)</b> <samp>{{item.option2}}</samp></p>
+
+            </div>
+
+            <div class="col-6">
+                <p> <b>C)</b> <samp>{{item.option3}}</samp></p>
+
+            </div>
+
+            <div class="col-6">
+                <p> <b>D)</b> <samp>{{item.option4}}</samp></p>
+
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <h3><b>Correct answer is:{{item.answer}}</b></h3>
+
+        <div class="row">
+            <div class="col-4">
+                <button mat-raised-button color="warn" (click)="deleteQuestionById(item.question_id)" class="mx-2">Delete</button>
+                <button [routerLink]="['/admin-dashbord/updatequestion/' + item.question_id + '/'+ item.quiz.title]" mat-raised-button color="primary"  class="mx-2" >Update</button>
+            </div>
+        </div>    
+    </mat-list>
+    
+</mat-card>
+
+<div class="row div justify-content-center">
+    <div class="col-2 mt-3">
+        <button class="" mat-raised-button color="primary" 
+        routerLink="/admin-dashbord/addquestion/{{quiz_id}}/{{quiz_title}}" >Add Question</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>Question Of {{quiz_title}}</h1>
+        <div class="row div justify-content-center">
+            <div class="col-2">
+                <button class="" mat-raised-button color="primary" 
+                [routerLink]="['/admin-dashbord/addquestion/{{quiz_id}}/{{quiz_title}}']" >Add Question</button>
+            </div>
+        </div>
+
+<mat-card *ngFor="let item of questions; let i =index "class="mt-20">
+    <mat-list class="p-3">
+        <p> <b>Q{{i+1}})</b>  <span [innerHTML]="item.content"></span></p>
+
+        <div class="row">
+            <div class="col-6">
+                <h3><b>A)</b>&nbsp;A</h3>
+            </div>
+           
+            <div class="col-6">
+                <h3><b>B)</b>&nbsp;B</h3>
+            </div>
+
+            <div class="col-6">
+                <h3><b>C)</b>&nbsp;C</h3>
+            </div>
+
+            <div class="col-6">
+                <h3><b>D)</b>&nbsp;D</h3>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+        <h3><b>Correct answer is:B</b></h3>
+
+        <div class="row">
+            <div class="col-4">
+                <button mat-raised-button color="warn"  class="mx-2">Delete</button>
+                <button mat-raised-button color="primary"  class="mx-2" [routerLink]="['/admin-dashbord/updatequestion']">Update</button>
+            </div>
+        </div>    
+    </mat-list>
+</mat-card> -->
