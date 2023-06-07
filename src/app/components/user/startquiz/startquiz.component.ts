@@ -33,6 +33,7 @@ export class StartquizComponent implements OnInit {
 
       this.timer=this.question.length*0.60*60 ;
       this.startTimer();
+      
     })
 
   }
